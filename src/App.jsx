@@ -8,23 +8,16 @@ function App() {
   const [view, setView] = useState('table');
 
   // Fetching the image of the cat
-  const fetchData = async () => {
+const fetchData = async () => {
     try {
       const response = await axios.get("https://api.thecatapi.com/v1/images/search?has_breeds=1");
-      console.log('API Response:', response.data);
-      setCatData(response.data[0]);
-    } catch (error) {
-      console.log("Error fetching data", error);
-    }
-  };
+      const cat = response.data[0];
 
-  // Fetching the details of the cat 
-  const fetchDetails = async (id) => {
-    try {
-      const response = await axios.get(`https://api.thecatapi.com/v1/images/${id}`);
-      setCatData(response.data);
+      const detailsResponse = await axios.get(`https://api.thecatapi.com/v1/images/${cat.id}`)
+
+      setCatData(detailsResponse.data);
     } catch (error) {
-      console.error("Error fetching cat details", error);
+      console.error("Error fetching data", error);
     }
   };
 
