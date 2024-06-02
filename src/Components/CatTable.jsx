@@ -8,21 +8,21 @@ function CatTable({ catData }) {
   }
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-full bg-white border">
+    <div className="overflow-x-auto ">
+      <table className=" h-48 min-w-full bg-white border border-black">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Name</th>
-            <th className="py-2 px-4 border-b">Breed</th>
-            <th className="py-2 px-4 border-b">Image</th>
+            <th className="py-2 px-4 border-b border-r border-black">Breed</th>
+            <th className="py-2 px-4 border-b border-r border-black">Details</th>
+            <th className="py-2 px-4 border-b border-black">Image</th>
           </tr>
         </thead>
         
         <tbody>
           <tr>
-            <td className="py-2 px-4 border-b">{catData.breeds[0]?.name || 'Unknown'}</td>
-            <td className="py-2 px-4 border-b">{catData.breeds[0]?.description || 'No description available'}</td>
-            <td className="py-2 px-4 border-b">
+            <td className="py-2 px-4 border-b border-r border-black">{catData.breeds[0]?.name || 'Unknown'}</td>
+            <td className="py-2 px-4 border-b border-r border-black">{catData.breeds[0]?.description || 'No description available'}</td>
+            <td className="py-2 px-4 border-b border-r border-black">
               <img src={catData.url} alt="Cat" className="w-16 h-16 object-cover" />
             </td>
           </tr>
